@@ -1,0 +1,14 @@
+.tracker {
+    display: block;
+    text-align: center;
+    margin: 2rem 1rem;
+    text-transform: uppercase;
+}
+
+.tracker h3 {
+    font-size: 3rem;
+}
+
+.tracker p {
+    font-size: 2rem;
+}

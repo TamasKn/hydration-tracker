@@ -1,5 +1,5 @@
 import './App.css';
-import InfoDisplay from "./components/InfoDisplay";
+import InfoDisplay from "./components/InfoDisplay/InfoDisplay";
 
 function App() {
     return (
@@ -8,16 +8,17 @@ function App() {
                 <h1>Hydration Tracker</h1>
             </div>
 
-            <InfoDisplay>
-                <h3>0.75L</h3>
-                <p>Total water drunk</p>
-            </InfoDisplay>
+            <div className="app__tracker-wrapper">
+                <InfoDisplay>
+                    <h3>0.75L</h3>
+                    <p>Total water drunk</p>
+                </InfoDisplay>
 
-            <InfoDisplay>
-                <h3>3</h3>
-                <p>Day streak</p>
-            </InfoDisplay>
-            
+                <InfoDisplay>
+                    <h3>3</h3>
+                    <p>Day streak</p>
+                </InfoDisplay>
+            </div>
 
             <div className="user">
 
