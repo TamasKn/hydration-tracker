@@ -36,3 +36,17 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* UTILS */
+
+.flex {
+    display: flex;
+}
+
+.fl-jc-cent {
+    justify-content: center;
+}
+
+.fl-jc-se {
+    justify-content: space-evenly;
+}
