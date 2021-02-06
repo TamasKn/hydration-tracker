@@ -18,10 +18,13 @@ function App() {
         input: null,
         day: 1
     })
+    const [message, setMessage] = useState('')
 
     useEffect(() => {
-
-    }, [])
+        if(calculatePercentage(consumption.ml, dailyGoal.goal) >= 100) {
+            setMessage('Well done! You achieved your daily goal.')
+        }
+    }, [consumption])
 
     const onDailyGoalChange = (e) => {
         setDailyGoal({...dailyGoal, input: e.target.value})
@@ -74,6 +77,13 @@ function App() {
         return (volume / goal) * 100
     }
 
+    const onReset = () => {
+        setDailyGoal({ ...dailyGoal, day: dailyGoal.day + 1  })
+        setConsumption({ ...consumption, ml: 0, percentage: 0.1 })
+        setMessage('')
+        // Save user result
+    }
+
     return (
         <div className="app__container">
             <div className="app__title">
@@ -89,6 +99,7 @@ function App() {
                 <InfoDisplay>
                     <h3>{dailyGoal.day}</h3>
                     <p>Day streak</p>
+                    <div className="cta-btn-rectangle" onClick={onReset}>Call the day</div>
                 </InfoDisplay>
             </div>
 
@@ -100,8 +111,8 @@ function App() {
 
             <CharacterEffect consumption={consumption.percentage} />
 
-            <div className="message">
-                <h4>Some message</h4>
+            <div className="app__message flex fl-jc-cent">
+                <h4>{message}</h4>
             </div>
 
             <Volumes onVolumeInput={onVolumeInput} />

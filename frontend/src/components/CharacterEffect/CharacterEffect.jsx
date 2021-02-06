@@ -1,6 +1,6 @@
-import './CharacterEffect.css';
-import body from '../../assets/human.png';
-import CharacterPath from './CharacterPath';
+import './CharacterEffect.css'
+import body from '../../assets/human.png'
+import CharacterPath from './CharacterPath'
 
 const CharacterEffect = ({consumption}) => {
     return(

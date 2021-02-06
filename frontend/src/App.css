@@ -1,5 +1,5 @@
 .app__container {
-
+    margin-bottom: 5rem;
 }
 
 .app__title {
@@ -8,6 +8,32 @@
     font-size: 2.5rem;
 }
 
-.app__tracker-wrapper {
+.app__message {
+    min-height: 2rem;
+    margin: 2rem 0;
+}
 
+.cta-btn-rounded {
+    border: 2px solid var(--text-light);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    font-size: 4.5rem;
+    margin: 1rem 1.2rem;
+}
+
+.cta-btn-rectangle {
+    border: 2px solid var(--text-light);
+    border-radius: 7px;
+    padding: .5rem;
+    width: fit-content;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.cta-btn-rectangle:hover,
+.cta-btn-rounded:hover {
+    color: var(--btn-hover);
+    border-color: var(--btn-hover);
 }

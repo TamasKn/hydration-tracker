@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './DailyGoal.css';
-import Modal from "../Modal/Modal";
+import { useState } from 'react'
+import './DailyGoal.css'
+import Modal from '../Modal/Modal'
 import pencil from '../../assets/edit.svg'
 
 const DailyGoal = ({inputChange, submit, goal}) => {
@@ -11,7 +11,7 @@ const DailyGoal = ({inputChange, submit, goal}) => {
         setPopup(true)
     }
 
-    const hideModal = (e) => {
+    const hideModal = () => {
         setPopup(false)
     }
 
@@ -19,12 +19,17 @@ const DailyGoal = ({inputChange, submit, goal}) => {
         <div className="daily-goal__container flex fl-jc-cent">
             <div className="daily-goal__edit">
                 <p>{goal/1000}L</p>
-                <img onClick={showModal} src={pencil} alt="Pencil Edit"/>
+                <img
+                    onClick={showModal}
+                    src={pencil}
+                    alt="Pencil Edit"
+                    title="Change daily goal"
+                />
             </div>
             <Modal show={popup}>
                 <h3>Set your Daily goal</h3>
-                <input onChange={inputChange} defaultValue="1000" type="number"/>
-                <div className="daily-goal__cta-btn" onClick={() => { submit(); hideModal();}}>Submit</div>
+                <input onChange={inputChange} defaultValue="0" type="number"/>
+                <div className="cta-btn-rectangle" onClick={() => { submit(); hideModal();}}>Submit</div>
             </Modal>
         </div>
     )

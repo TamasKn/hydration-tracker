@@ -1,20 +1,7 @@
-.action-buttons__container {
 
-}
-
-.action-buttons__btn {
-    border: 2px solid var(--text-light);
-    border-radius: 50%;
-    cursor: pointer;
-    width: 5rem;
-    height: 5rem;
-    font-size: 4.5rem;
-    margin: 1rem 1.2rem;
-}
-
-.action-buttons__btn:first-child {
+.action-buttons__container .cta-btn-rounded:first-child {
     line-height: 4.5rem;
 }
-.action-buttons__btn:nth-child(2) {
+.action-buttons__container .cta-btn-rounded:nth-child(2) {
     line-height: 4rem;
 }
