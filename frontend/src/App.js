@@ -2,14 +2,19 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay/InfoDisplay';
 import Volumes from './components/Volumes/Volumes';
+import ActionButtons from './components/ActionButtons/ActionButtons';
 
 function App() {
 
     const [volume, setVolume] = useState(100)
+    const [consumption, setConsumption] = useState({
+        ml: 0,
+        percentage: 0.1
+    })
 
     useEffect(() => {
-        console.log({volume})
-    }, [volume])
+
+    }, [])
 
     const onVolumeInput = (e) => {
         const { id } = e.target
@@ -27,6 +32,14 @@ function App() {
             default:
                 break;
         }
+    }
+
+    const onIncrease = (e) => {
+
+    }
+
+    const onDecrease = (e) => {
+
     }
 
     return (
@@ -61,10 +74,10 @@ function App() {
 
             <Volumes onVolumeInput={onVolumeInput} />
 
-            <div className="cta-buttons">
-                <div>PLUS</div>
-                <div>MINUS</div>
-            </div>
+            <ActionButtons
+                onIncrease={onIncrease}
+                onDecrease={onDecrease}
+            />
 
 
         </div>
