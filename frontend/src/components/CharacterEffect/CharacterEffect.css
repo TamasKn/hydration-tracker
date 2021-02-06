@@ -1,0 +1,30 @@
+.character-effect__container {
+
+}
+
+.meter {
+    box-sizing: content-box;
+    height: 50rem;
+    width: 20rem;
+    position: relative;
+
+    -webkit-clip-path: url(#human-clip-path);
+    clip-path: url(#human-clip-path);
+
+}
+
+#filling {
+    width: 20rem;
+    position: absolute;
+    bottom: 1px;
+    transition: ease-out 500ms;
+    background-color: rgb(14, 104, 222);
+    z-index: 5;
+}
+
+#silhouette {
+    width: 20.5rem;
+    height: 49.8rem;
+    position: absolute;
+    bottom: 1px;
+}

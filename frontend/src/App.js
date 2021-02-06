@@ -3,6 +3,7 @@ import './App.css';
 import InfoDisplay from './components/InfoDisplay/InfoDisplay';
 import Volumes from './components/Volumes/Volumes';
 import ActionButtons from './components/ActionButtons/ActionButtons';
+import CharacterEffect from './components/CharacterEffect/CharacterEffect';
 
 function App() {
 
@@ -64,9 +65,7 @@ function App() {
 
             </div>
 
-            <div className="user">
-
-            </div>
+            <CharacterEffect />
 
             <div className="message">
                 <h4>Some message</h4>
