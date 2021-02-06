@@ -5,6 +5,10 @@ import Volumes from './components/Volumes/Volumes';
 import ActionButtons from './components/ActionButtons/ActionButtons';
 import CharacterEffect from './components/CharacterEffect/CharacterEffect';
 import DailyGoal from './components/DailyGoal/DailyGoal';
+import { apiGet, apiPost } from './helper/helper';
+
+// Serverless tested with sls offline
+const gatewayApi = 'http://localhost:5000/dev/hydration/data'
 
 function App() {
 
@@ -19,6 +23,14 @@ function App() {
         day: 1
     })
     const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        // Fetching user data
+        apiGet(gatewayApi)
+            .then(resp => {
+                setDailyGoal({...dailyGoal, day: resp.data.current_streak})
+            })
+    }, [])
 
     useEffect(() => {
         if(calculatePercentage(consumption.ml, dailyGoal.goal) >= 100) {
@@ -81,7 +93,19 @@ function App() {
         setDailyGoal({ ...dailyGoal, day: dailyGoal.day + 1  })
         setConsumption({ ...consumption, ml: 0, percentage: 0.1 })
         setMessage('')
-        // Save user result
+
+        // Sending user results to backend
+        apiPost(gatewayApi, {
+            user: 1,
+            current_streak: dailyGoal.day + 1,
+            result: {
+                day: dailyGoal.day,
+                goal: dailyGoal.goal,
+                consumption: consumption.ml
+            }
+        }).then(resp => {
+            console.log(resp)
+        })
     }
 
     return (
