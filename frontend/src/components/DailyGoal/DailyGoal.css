@@ -30,3 +30,19 @@
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
+
+.daily-goal__edit {
+    display: block;
+    position: relative;
+    width: 20rem;
+    text-align: right;
+    border-bottom: 2px solid var(--water);
+}
+
+.daily-goal__edit img {
+    width: 2.5rem;
+    right: 1px;
+    margin-top: .5rem;
+    position: absolute;
+    cursor: pointer;
+}

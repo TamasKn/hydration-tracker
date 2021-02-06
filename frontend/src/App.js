@@ -95,6 +95,7 @@ function App() {
             <DailyGoal
                 inputChange={onDailyGoalChange}
                 submit={onDailyGoalSubmit}
+                goal={dailyGoal.goal}
             />
 
             <CharacterEffect consumption={consumption.percentage} />

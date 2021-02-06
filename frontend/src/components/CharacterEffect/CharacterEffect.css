@@ -18,7 +18,7 @@
     position: absolute;
     bottom: 1px;
     transition: ease-out 500ms;
-    background-color: rgb(14, 104, 222);
+    background-color: var(--water);
     z-index: 5;
 }
 
